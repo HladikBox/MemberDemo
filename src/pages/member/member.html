@@ -1,0 +1,19 @@
+<ion-content>
+    <ion-grid class="info">
+        <ion-row>
+            <ion-col></ion-col>
+        </ion-row>
+        <ion-row *ngIf="Member.isLogined()==false" (click)="gotoLogin()">
+            <ion-col col-3>
+                <img class="photo" src="assets/imgs/bg-member-default.jpg" />
+            </ion-col>
+            <ion-col  col-8>
+                <p class="title">{{Lang["clicktologin"]}}</p>
+                <p class="logintips">{{Lang["clicktologin_tips"]}}</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col></ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,19 @@
+page-member {
+    .info{
+        background:black;
+        padding-left:7%;
+        padding-right:3%;
+        color:white;
+    }
+    .info .title{
+        font-weight:bold;
+    }
+    .info .logintips{
+        font-size:80%;
+    }
+    .info .photo{
+        width:100%;
+        border-radius:50%;
+        border:solid 2px #cccccc;
+    }
+}
