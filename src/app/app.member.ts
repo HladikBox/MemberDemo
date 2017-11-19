@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import {AppUtil} from './app.util';
 import { ApiConfig } from './api.config';
+import { AppLang } from './app.lang';
 
 export class AppMember {
     private constructor() {
@@ -24,10 +25,18 @@ export class AppMember {
 
     public getPhoto() {
         if (this.photo == null || this.photo.trim() == "") {
-            return "assets/img/bg-member-default.jpg";;
+            return "assets/imgs/bg-member-default.jpg";;
         }
         return this.photo.indexOf("http") == 0 ? this.photo : ApiConfig.getUploadPath() + "member/" + this.photo;
-        
+    }
+
+    public getName()
+    {
+        if (this.name == null || this.name.trim() == "")
+        {
+            return AppLang.Lang["membernoname"];
+        }
+        return this.name;
     }
 
     public setLogin(id, name, photo,  token) {
@@ -38,8 +47,8 @@ export class AppMember {
         ApiConfig.SetToken(token, id);
 
         this.store();
-        
     }
+
 
     public store() {
         var json = {
@@ -53,7 +62,8 @@ export class AppMember {
     }
 
     public restore() {
-        AppUtil.Storage.get("memberlogin").then(jsonstr => {
+        AppUtil.Storage.get("memberlogin").then(jsonstr =>
+        {
             if (jsonstr==null||jsonstr == "") {
                 return;
             }
@@ -78,10 +88,15 @@ export class AppMember {
     }
 
     public isLogined() {
-        if (this.id.trim() != "") {
-            alert(this.id);
-        }
         return this.id.trim() != "";
     }
 
+    public static SetLatestLoginMobile(mobile)
+    {
+        AppUtil.Storage.set("latestloginmobile", mobile);
+    }
+    public static GetLatestLoginMobile()
+    {
+        return AppUtil.Storage.get("latestloginmobile");
+    }
 }

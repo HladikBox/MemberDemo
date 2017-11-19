@@ -1,4 +1,4 @@
-import { Headers, RequestOptions, Http, Response } from '@angular/http';
+﻿import { Headers, RequestOptions, Http, Response } from '@angular/http';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { LoadingController, Loading } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';

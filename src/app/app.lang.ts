@@ -11,6 +11,22 @@ export class AppLang {
         AppLang.Lang["Me"] = "我的";
         AppLang.Lang["clicktologin"] = "点击登录";
         AppLang.Lang["clicktologin_tips"] = "获取你的专属定制";
+        AppLang.Lang["login"] = "登录"; 
+        AppLang.Lang["passwordlogin"] = "密码登录";
+        AppLang.Lang["smslogin"] = "短信登录"; 
+        AppLang.Lang["password"] = "密码";
+        AppLang.Lang["mobile"] = "手机号码";
+        AppLang.Lang["verifycode"] = "验证码"; 
+        AppLang.Lang["getverifycode"] = "获取验证码"; 
+        AppLang.Lang["reminder"] = "重新发送";
+        AppLang.Lang["mobilenotregister"] = "手机号码尚未注册"; 
+        AppLang.Lang["retryafterminute"] = "获取太快，请在一分钟后重试"; 
+        AppLang.Lang["loginfail"] = "登录失败，请检查登录信息后重试"; 
+        AppLang.Lang["verifycodeinvalid"] = "验证码不正确"; 
+        AppLang.Lang["membernoname"] = "匿名用户"; 
+        AppLang.Lang["account"] = "账户"; 
+        AppLang.Lang["superexpiredreminderdays"] = "特权剩余天数";
+        AppLang.Lang["supermember"] = "特权会员";
     }
     
 }
