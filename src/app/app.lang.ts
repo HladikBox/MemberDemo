@@ -31,8 +31,16 @@ export class AppLang {
         AppLang.Lang["loginissue"] = "登录遇到问题"; 
         AppLang.Lang["loginforagree"] = "登录即表示你同意"; 
         AppLang.Lang["useragreement"] = "《用户使用协议》";
-        AppLang.Lang["registeraccount"] = "注册账户";
-        AppLang.Lang["confirmmobile"] = "请确保你使用常用的手机号码进行注册";
+        AppLang.Lang["registeraccount"] = "注册账户"; 
+        AppLang.Lang["confirmmobile"] = "请确保你使用常用的手机号码进行注册"; 
+        AppLang.Lang["getverifyarree"] = "点击\"获取验证码\"按钮，即表示同意"; 
+        AppLang.Lang["registeragreement"] = "注册协议";
+        AppLang.Lang["mobileisused"] = "手机号已经注册";
+        AppLang.Lang["verifymobile"] = "验证手机号";
+        AppLang.Lang["registerverifycodesent"] = "验证码已发送到手机，请尽快完成注册";
+        AppLang.Lang["yourname"] = "我的昵称"; 
+        AppLang.Lang["defaultpassword"] = "默认登录密码";
+        AppLang.Lang["submitregister"] = "提交注册";
     }
     
 }

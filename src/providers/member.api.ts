@@ -244,6 +244,191 @@ public login(data, showLoadingModal:boolean=true) {
     }
 
 
+//member login接口的拓展，如果手机号码不存在自动创建用户
+public logini(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/logini';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/logini',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/logini',data,err);
+            });
+
+        
+    }
+
+
+//检查手机号码是否已经被注册
+public mobileisuse(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/mobileisuse';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/mobileisuse',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/mobileisuse',data,err);
+            });
+
+        
+    }
+
+
+//授权登录绑定会员手机
+public oauthbindmobile(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/oauthbindmobile';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/oauthbindmobile',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/oauthbindmobile',data,err);
+            });
+
+        
+    }
+
+
+//授权登录
+public oauthlogin(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/oauthlogin';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/oauthlogin',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/oauthlogin',data,err);
+            });
+
+        
+    }
+
+
+//授权注册
+public oauthregister(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/oauthregister';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/oauthregister',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/oauthregister',data,err);
+            });
+
+        
+    }
+
+
 //充值申请，获取订单编号，金额及标题，用以申请支付请求
 public rechargerequest(data, showLoadingModal:boolean=true) {
         var url = ApiConfig.getApiUrl()+'member/rechargerequest';
@@ -349,6 +534,43 @@ public resetpassword(data, showLoadingModal:boolean=true) {
 					         ApiConfig.DimissLoadingModal();
                 }
                 return ApiConfig.ErrorHandle('member/resetpassword',data,err);
+            });
+
+        
+    }
+
+
+//发送授权登录绑定手机号码的验证码
+public sendbindverifycode(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/sendbindverifycode';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/sendbindverifycode',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/sendbindverifycode',data,err);
             });
 
         
@@ -466,6 +688,43 @@ public sendregisterverifycode(data, showLoadingModal:boolean=true) {
     }
 
 
+//超级会员日期更新
+public superrenew(data, showLoadingModal:boolean=true) {
+        var url = ApiConfig.getApiUrl()+'member/superrenew';
+        var headers = ApiConfig.GetHeader(url, data);
+        let options = new RequestOptions({ headers: headers });
+
+        let body=ApiConfig.ParamUrlencoded(data);
+
+        let loading: Loading=null;
+        if(showLoadingModal){
+          loading = ApiConfig.GetLoadingModal();
+        }
+
+        return this.http.post(url, body, options).toPromise()
+            .then((res) => {
+              if(ApiConfig.DataLoadedHandle('member/superrenew',data,res)){
+                  if(showLoadingModal){
+      					     ApiConfig.DimissLoadingModal();
+                  }
+      				
+      					 return res.json();
+      				}else{
+                return Promise.reject(res);
+              }
+            })
+            .catch(err => {
+                
+                if(showLoadingModal){
+					         ApiConfig.DimissLoadingModal();
+                }
+                return ApiConfig.ErrorHandle('member/superrenew',data,err);
+            });
+
+        
+    }
+
+
 //取消关注
 public unfollow(data, showLoadingModal:boolean=true) {
         var url = ApiConfig.getApiUrl()+'member/unfollow';
@@ -571,43 +830,6 @@ public weixinrecharge(data, showLoadingModal:boolean=true) {
 					         ApiConfig.DimissLoadingModal();
                 }
                 return ApiConfig.ErrorHandle('member/weixinrecharge',data,err);
-            });
-
-        
-    }
-
-
-//超级会员日期更新
-public superrenew(data, showLoadingModal:boolean=true) {
-        var url = ApiConfig.getApiUrl()+'member/superrenew';
-        var headers = ApiConfig.GetHeader(url, data);
-        let options = new RequestOptions({ headers: headers });
-
-        let body=ApiConfig.ParamUrlencoded(data);
-
-        let loading: Loading=null;
-        if(showLoadingModal){
-          loading = ApiConfig.GetLoadingModal();
-        }
-
-        return this.http.post(url, body, options).toPromise()
-            .then((res) => {
-              if(ApiConfig.DataLoadedHandle('member/superrenew',data,res)){
-                  if(showLoadingModal){
-      					     ApiConfig.DimissLoadingModal();
-                  }
-      				
-      					 return res.json();
-      				}else{
-                return Promise.reject(res);
-              }
-            })
-            .catch(err => {
-                
-                if(showLoadingModal){
-					         ApiConfig.DimissLoadingModal();
-                }
-                return ApiConfig.ErrorHandle('member/superrenew',data,err);
             });
 
         

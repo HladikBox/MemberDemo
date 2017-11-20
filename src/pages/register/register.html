@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Generated template for the RegisterPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -20,11 +20,55 @@
 
 
 <ion-content padding>
-    <p class="light">{{info[step].description}}</p>
-    <ion-list *ngIf="step==1">
-        <ion-item>
-            <ion-label  item-start>+86</ion-label>
-            <ion-input type="number" [placeholder]="Lang['mobile']" [(ngModel)]="mobile"></ion-input>
-        </ion-item>
-    </ion-list>
+  <p class="light">{{info[step].description}}</p>
+  <div *ngIf="step==1">
+    <ion-grid>
+      <ion-row style="border-bottom:1px solid black">
+        <ion-col col-2>
+          <ion-label item-start>+86</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input type="number" [placeholder]="Lang['mobile']" [(ngModel)]="mobile" maxlength="11"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-top:3.09%;">
+        <ion-col col-12>
+          <button *ngIf="verifycodeReminder<=0" ion-button block (click)="getVerifyCode()" [disabled]="mobile.length!=11">{{Lang["getverifycode"]}}</button>
+          <button *ngIf="verifycodeReminder>0" ion-button block [disabled]="true">{{Lang["reminder"]}}({{verifycodeReminder}})</button>
+        </ion-col>
+        <ion-col col-12 text-center>
+          <p class="light">{{Lang["getverifyarree"]}}<span class="primary2" (click)="showGeneralText(modalCtrl,'registeragreement')">{{Lang["registeragreement"]}}</span></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="step==2">
+
+    <ion-grid>
+      <ion-row style="border-bottom:1px solid black">
+        <ion-col col-8>
+          <ion-input type="number" [placeholder]="Lang['verifycode']" [(ngModel)]="verifycode" maxlength="6"></ion-input>
+        </ion-col>
+        <ion-col col-4  *ngIf="verifycodeReminder<=0" (click)="getVerifyCode()">
+          <ion-label class="primary2" >{{Lang["getverifycode"]}}</ion-label>
+        </ion-col>
+        <ion-col col-4 *ngIf="verifycodeReminder>0">
+          <ion-label  class="light">{{Lang["reminder"]}}({{verifycodeReminder}})</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row  style="border-bottom:1px solid black">
+        <ion-col col-12>
+          <ion-input type="text" [placeholder]="Lang['yourname']" [(ngModel)]="name" maxlength="20"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom:1px solid black">
+        <ion-col col-12>
+          <ion-input type="password" [placeholder]="Lang['defaultpassword']" [(ngModel)]="password" maxlength="30" ></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-top:3.09%;">
+        <button  ion-button block (click)="tryRegister()" [disabled]="mobile.length!=11||name.length==0||password.length==0||verifycode.length!=6">{{Lang["submitregister"]}}</button>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

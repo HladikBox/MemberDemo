@@ -102,6 +102,13 @@ export class LoginPage extends AppBase
     }
     gotoRegister() {
         var modal = this.modalCtrl.create("RegisterPage");
+        modal.onDidDismiss(data =>
+        {
+            if (data != null && data.logined == true)
+            {
+                this.dismiss();
+            }
+        });
         modal.present();
     }
 }
