@@ -1,7 +1,8 @@
 ﻿import { ApiConfig } from "./api.config";
 import { AppLang } from "./app.lang";
-import { ToastController } from 'ionic-angular';
+import { ToastController, ModalController } from 'ionic-angular';
 import { AppMember } from './app.member';
+import { AppUtil } from "./app.util";
 
 export class AppBase {
     public uploadpath: string = ApiConfig.getUploadPath();
@@ -18,4 +19,12 @@ export class AppBase {
         });
         toast.present();
     }
+    showGeneralText(modalCtrl: ModalController, keycode: string) {
+        var modal = modalCtrl.create("GeneralTextPage", { keycode: keycode });
+        modal.present();
+    }
+    htmlDecode(content) {
+        return AppUtil.HtmlDecode(content);
+    }
+
 }

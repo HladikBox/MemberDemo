@@ -38,4 +38,9 @@ export class MemberPage extends AppBase
                 });
         }
     }
+    gotoMemberInfo() {
+        this.Member.logout();
+        //var modal = this.modalCtrl.create("MemberInfoPage");
+        //modal.present();
+    }
 }

@@ -25,8 +25,14 @@ export class AppLang {
         AppLang.Lang["verifycodeinvalid"] = "验证码不正确"; 
         AppLang.Lang["membernoname"] = "匿名用户"; 
         AppLang.Lang["account"] = "账户"; 
-        AppLang.Lang["superexpiredreminderdays"] = "特权剩余天数";
+        AppLang.Lang["superexpiredreminderdays"] = "特权剩余天数"; 
         AppLang.Lang["supermember"] = "特权会员";
+        AppLang.Lang["registernow"] = "立即注册"; 
+        AppLang.Lang["loginissue"] = "登录遇到问题"; 
+        AppLang.Lang["loginforagree"] = "登录即表示你同意"; 
+        AppLang.Lang["useragreement"] = "《用户使用协议》";
+        AppLang.Lang["registeraccount"] = "注册账户";
+        AppLang.Lang["confirmmobile"] = "请确保你使用常用的手机号码进行注册";
     }
     
 }

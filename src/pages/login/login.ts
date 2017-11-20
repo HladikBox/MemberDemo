@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ToastController, ModalController } from 'ionic-angular';
 import { AppBase } from "../../app/app.base";
 import { AppMember } from "../../app/app.member";
 import { MemberApi } from "../../providers/member.api";
@@ -25,7 +25,9 @@ export class LoginPage extends AppBase
     verifycode = "";
     verifycodeReminder = 0;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public memberApi: MemberApi, public toastCtrl: ToastController)
+    constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
+        public modalCtrl: ModalController,
+        public memberApi: MemberApi, public toastCtrl: ToastController)
     {
         super();
     }
@@ -74,12 +76,20 @@ export class LoginPage extends AppBase
     }
     tryLogin()
     {
+        var json = null;
+        if (this.logintype == "password") {
+            json = { mobile: this.mobile, password: this.password };
+        } else {
+
+            json = { mobile: this.mobile, verifycode: this.verifycode };
+        }
         AppMember.SetLatestLoginMobile(this.mobile);
-        this.memberApi.login({ mobile: this.mobile, password: this.password, verifycode: this.verifycode })
+        this.memberApi.login(json)
             .then((data) =>
             {
                 if (data.code == 0){
                     this.Member.setLogin(data.return.id, data.return.name, data.return.photo, data.return.token);
+                    this.dismiss();
                 }
                 else if (data.code == -401){
                     this.toast(this.toastCtrl, this.Lang["loginfail"]);
@@ -89,5 +99,9 @@ export class LoginPage extends AppBase
                     this.toast(this.toastCtrl, this.Lang["verifycodeinvalid"]);
                 }
             });
+    }
+    gotoRegister() {
+        var modal = this.modalCtrl.create("RegisterPage");
+        modal.present();
     }
 }

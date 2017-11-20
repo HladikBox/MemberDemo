@@ -55,5 +55,17 @@
   </div>
   <div padding>
     <button ion-button color="primary" block (click)="tryLogin()"  [disabled]="logintype=='password'?password.length==0:verifycode.length==0">{{Lang["login"]}}</button>
+      <ion-grid>
+          <ion-row>
+              <ion-col col-6  (click)="showGeneralText(modalCtrl,'loginissue')">{{Lang["loginissue"]}}</ion-col>
+              <ion-col col-6 text-right (click)="gotoRegister()">{{Lang["registernow"]}}</ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
+  <div padding>
   </div>
 </ion-content>
+<ion-footer>
+    <p class="footeragree light" >{{Lang["loginforagree"]}}
+    <span (click)="showGeneralText(modalCtrl,'useragreement')" class="primary2">{{Lang["useragreement"]}}</span></p>
+</ion-footer>

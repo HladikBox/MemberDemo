@@ -1,7 +1,11 @@
 ﻿<ion-content>
     <ion-grid class="info">
         <ion-row>
-            <ion-col></ion-col>
+            <ion-col text-right>
+                <ion-icon  name="" class="toprighticon" style="color:black;"></ion-icon>
+                <ion-icon  *ngIf="Member.isLogined()" name="settings" class="toprighticon"></ion-icon>
+                <ion-icon  *ngIf="Member.isLogined()" name="mail" class="toprighticon"></ion-icon>
+            </ion-col>
         </ion-row>
         <ion-row *ngIf="Member.isLogined()==false" (click)="gotoLogin()">
             <ion-col col-3>
