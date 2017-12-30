@@ -22,7 +22,7 @@
         </ion-col>
         <ion-col col-8>
           <p class="title">{{Member.getName()}}
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname">{{info.rank.name}}</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname" *ngIf="info.rank.name!=''">{{info.rank.name}}</span>
           &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname" *ngIf="info.super_expired_days>0">{{info.super_expired_days>0?Lang["supermember"]:""}}</span></p>
           <p class="logintips">{{Lang["account"]}}：{{info.account}}&nbsp;&nbsp;&nbsp;&nbsp;{{info.super_expired_days>0?Lang["superexpiredreminderdays"]+"："+info.super_expired_days:""}}</p>
         </ion-col>

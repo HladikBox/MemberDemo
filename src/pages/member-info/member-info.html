@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Generated template for the MemberInfoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>MemberInfo</ion-title>
+    <ion-title>{{Lang["accountinfo"]}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div class="content-block">
+    <ion-list>
+      <ion-item>
+        <h3>{{Lang["headphoto"]}}</h3>
+        <ion-avatar item-end>
+          <img src="{{memberinfo.photo}}">
+        </ion-avatar>
+      </ion-item>
+      <ion-item>
+        <h3>{{Lang["nickname"]}}</h3>
+        <p  item-end>{{memberinfo.name}}</p>
+      </ion-item>
+      <ion-item>
+        <h3>{{Lang["nickname"]}}</h3>
+        <p item-end>{{memberinfo.name}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

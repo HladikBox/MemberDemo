@@ -39,8 +39,11 @@ export class AppLang {
         AppLang.Lang["verifymobile"] = "验证手机号";
         AppLang.Lang["registerverifycodesent"] = "验证码已发送到手机，请尽快完成注册";
         AppLang.Lang["yourname"] = "我的昵称"; 
-        AppLang.Lang["defaultpassword"] = "默认登录密码";
-        AppLang.Lang["submitregister"] = "提交注册";
+        AppLang.Lang["defaultpassword"] = "默认登录密码"; 
+        AppLang.Lang["submitregister"] = "提交注册"; 
+        AppLang.Lang["accountinfo"] = "账号资料"; 
+        AppLang.Lang["headphoto"] = "头像";
+        AppLang.Lang["nickname"] = "昵称";
     }
     
 }

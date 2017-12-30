@@ -30,6 +30,16 @@ export class AppMember {
         return this.photo.indexOf("http") == 0 ? this.photo : ApiConfig.getUploadPath() + "member/" + this.photo;
     }
 
+    public static getPhotoByPath(photo)
+    {
+        if (photo == null || photo.trim() == "")
+        {
+            return "assets/imgs/bg-member-default.jpg";;
+        }
+        return photo.indexOf("http") == 0 ? photo : ApiConfig.getUploadPath() + "member/" + photo;
+
+    }
+
     public getName()
     {
         if (this.name == null || this.name.trim() == "")

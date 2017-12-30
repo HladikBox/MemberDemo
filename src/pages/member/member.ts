@@ -34,13 +34,12 @@ export class MemberPage extends AppBase
                     this.Member.photo = data.photo;
                     this.Member.store();
                     this.info = data;
-
                 });
         }
     }
     gotoMemberInfo() {
-        this.Member.logout();
-        //var modal = this.modalCtrl.create("MemberInfoPage");
-        //modal.present();
+        //this.Member.logout();
+        var modal = this.modalCtrl.create("MemberInfoPage");
+        modal.present();
     }
 }
