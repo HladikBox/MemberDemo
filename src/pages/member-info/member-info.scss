@@ -1,3 +1,28 @@
-page-member-info {
+﻿page-member-info {
+  .select-icon {
+    display: none;
+  }
 
+  .select-text {
+    font-size: 1.4rem;
+    color: #8e9093;
+  }
+
+  .datetime-text {
+    font-size: 1.4rem;
+    color: #8e9093;
+  }
+
+  .datetime-ios {
+    padding: 0px;
+  }
+
+  .datetime-md {
+    padding: 0px;
+  }
+
+  p {
+    text-align: right;
+    max-width: 70%;
+  }
 }

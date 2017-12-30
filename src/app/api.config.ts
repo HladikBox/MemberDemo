@@ -129,6 +129,7 @@ export class ApiConfig {
     }
 	public static DataLoadedHandle(url,post,data):boolean {
         try {
+            console.log(data);
             data = data.json();
 			if(data.code!=null){
                 if (data.code == "404" || data.code == "401" || data.code == "500") {

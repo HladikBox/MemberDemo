@@ -22,19 +22,35 @@
   <div class="content-block">
     <ion-list>
       <ion-item>
-        <h3>{{Lang["headphoto"]}}</h3>
-        <ion-avatar item-end>
-          <img src="{{memberinfo.photo}}">
+        <ion-label>{{Lang["headphoto"]}}</ion-label>
+        <ion-avatar item-end  (click)="selectPhoto()">
+          <img src="{{getPhoto()}}">
         </ion-avatar>
       </ion-item>
-      <ion-item>
-        <h3>{{Lang["nickname"]}}</h3>
+      <ion-item  (click)="nameInput()">
+        <ion-label>{{Lang["nickname"]}}</ion-label>
         <p  item-end>{{memberinfo.name}}</p>
       </ion-item>
       <ion-item>
-        <h3>{{Lang["nickname"]}}</h3>
-        <p item-end>{{memberinfo.name}}</p>
+        <ion-label>{{Lang["sexual"]}}</ion-label>
+        <ion-select [(ngModel)]="memberinfo.sexual"  (ionChange)="sexualChange(e)" okText="{{Lang['ok']}}" cancelText="{{Lang['cancel']}}">
+          <ion-option value="">{{Lang["unsetting"]}}</ion-option>
+          <ion-option value="F">{{Lang["female"]}}</ion-option>
+          <ion-option value="M">{{Lang["male"]}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{Lang["birth"]}}</ion-label>
+        <ion-datetime  item-end displayFormat="YYYY-MM-DD" [(ngModel)]="memberinfo.birth" (ionChange)="birthChange(e)"></ion-datetime>
+      </ion-item>
+      <ion-item (click)="signatureInput()">
+        <ion-label  >{{Lang["signature"]}}</ion-label>
+        <p item-end >{{memberinfo.signature}}</p>
       </ion-item>
     </ion-list>
+  </div>
+
+  <div class="content-block">
+    <button ion-button color="danger" clear block (click)="gotoLogout()">{{Lang["logout"]}}</button>
   </div>
 </ion-content>

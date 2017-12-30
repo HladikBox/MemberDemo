@@ -42,8 +42,26 @@ export class AppLang {
         AppLang.Lang["defaultpassword"] = "默认登录密码"; 
         AppLang.Lang["submitregister"] = "提交注册"; 
         AppLang.Lang["accountinfo"] = "账号资料"; 
-        AppLang.Lang["headphoto"] = "头像";
+        AppLang.Lang["headphoto"] = "头像"; 
         AppLang.Lang["nickname"] = "昵称";
+        AppLang.Lang["sexual"] = "性别"; 
+        AppLang.Lang["unsetting"] = "未设置";
+        AppLang.Lang["male"] = "男";
+        AppLang.Lang["female"] = "女";
+        AppLang.Lang["birth"] = "生日"; 
+        AppLang.Lang["signature"] = "个性签名";
+        AppLang.Lang["logout"] = "退出登录";
+        AppLang.Lang["info"] = "提示";
+        AppLang.Lang["warning"] = "警告"; 
+        AppLang.Lang["danger"] = "错误";
+        AppLang.Lang["pleasetype"] = "请输入";
+        AppLang.Lang["cannotnull"] = "不能为空"; 
+        AppLang.Lang["ok"] = "确认"; 
+        AppLang.Lang["cancel"] = "取消";
+        AppLang.Lang["photoselect"] = "头像选择"; 
+        AppLang.Lang["takephoto"] = "拍照";
+        AppLang.Lang["takefromalbum"] = "手机相册";
+        AppLang.Lang["takerandom"] = "随机推荐"; 
     }
     
 }

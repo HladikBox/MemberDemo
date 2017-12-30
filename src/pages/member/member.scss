@@ -16,20 +16,22 @@
   }
 
   .info .photo {
-    width: 100%;
+    width: 20vw;
+    height: 20vw;
     border-radius: 50%;
     border: solid 2px #cccccc;
   }
 
   .info .title .rankname {
-    padding:2px;
+    padding: 2px;
     font-size: 8px;
     background-color: white;
     color: black;
     border-radius: 2px;
   }
-  .info .toprighticon{
-      font-size:150%;
-      padding-left:3.09%;
+
+  .info .toprighticon {
+    font-size: 150%;
+    padding-left: 3.09%;
   }
 }

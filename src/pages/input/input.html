@@ -1,0 +1,40 @@
+﻿<!--
+  Generated template for the InputPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="ok()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="content-block">
+    <ion-list>
+      <ion-item *ngIf="type=='text'">
+        <ion-input type="text" [placeholder]="placeholder" [(ngModel)]="val" maxlength="{{maxlength}}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="type=='textarea'">
+        <ion-textarea type="text" [placeholder]="placeholder" [(ngModel)]="val" maxlength="{{maxlength}}" rows="6"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="type=='textarea'">
+        <p style="text-align:right">{{val.length}}/{{maxlength}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -39,7 +39,6 @@ export class AppMember {
         return photo.indexOf("http") == 0 ? photo : ApiConfig.getUploadPath() + "member/" + photo;
 
     }
-
     public getName()
     {
         if (this.name == null || this.name.trim() == "")
