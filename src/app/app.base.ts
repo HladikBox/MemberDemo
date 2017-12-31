@@ -38,10 +38,14 @@ export class AppBase {
         modal.present();
         return modal;
     }
-    toast(toastCtrl: ToastController,msg:string) {
+    toast(toastCtrl: ToastController, msg: string) {
+        var second = 3000 * (msg.length / 4);
+        if (second <3000) {
+            second = 3000;
+        }
         let toast = toastCtrl.create({
             message: msg,
-            duration: 3000
+            duration: second 
         });
         toast.present();
     }
@@ -88,4 +92,5 @@ export class AppBase {
                 // error
             })
     }
+
 }

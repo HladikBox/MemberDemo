@@ -32,7 +32,7 @@
       <ion-list *ngSwitchCase="'password'">
         <ion-item>
           <ion-icon name="person-outline" item-start></ion-icon>
-          <ion-input type="text" [placeholder]="Lang['mobile']" [(ngModel)]="mobile"></ion-input>
+          <ion-input type="text" [placeholder]="Lang['mobile']" [(ngModel)]="mobile"  maxlength="11"></ion-input>
         </ion-item>
         <ion-item>
           <ion-icon name="lock-outline" item-start></ion-icon>
@@ -42,7 +42,7 @@
       <ion-list *ngSwitchCase="'sms'">
         <ion-item>
           <ion-icon name="person-outline" item-start></ion-icon>
-          <ion-input type="text" [placeholder]="Lang['mobile']" [(ngModel)]="mobile"></ion-input>
+          <ion-input type="text" [placeholder]="Lang['mobile']" [(ngModel)]="mobile" maxlength="11"></ion-input>
         </ion-item>
         <ion-item>
           <ion-icon name="lock-outline" item-start></ion-icon>

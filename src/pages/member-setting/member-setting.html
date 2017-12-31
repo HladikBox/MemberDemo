@@ -1,0 +1,52 @@
+﻿<!--
+  Generated template for the MemberSettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Lang["setting"]}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div   class="content-block">
+    <ion-list>
+      <ion-list-header class="primary2">
+        {{Lang["accountsecurity"]}}
+      </ion-list-header>
+      <ion-item (click)="gotoMemberInfo()">{{Lang["accountinfo"]}}</ion-item>
+      <ion-item (click)="gotoMemberResetPassword()">{{Lang["resetpassword"]}}</ion-item>
+      <ion-item (click)="gotoMemberRebindMobile()">{{Lang["rebindmobile"]}}</ion-item>
+      <ion-item>{{Lang["privatesetting"]}}</ion-item>
+      <ion-item>{{Lang["identityverify"]}}</ion-item>
+      <ion-list-header class="primary2">
+        {{Lang["advanced"]}}
+      </ion-list-header>
+      <ion-item>{{Lang["notifysetting"]}}</ion-item>
+      <ion-item>{{Lang["pushsetting"]}}</ion-item>
+      <ion-item>{{Lang["clearstorage"]}}</ion-item>
+      <ion-item>{{Lang["clearsearch"]}}</ion-item>
+      <ion-list-header class="primary2">
+        {{Lang["aboutus"]}}
+      </ion-list-header>
+      <ion-item (click)="showGeneralText(modalCtrl,'aboutus')">{{Lang["introduce"]}}</ion-item>
+      <ion-item (click)="showGeneralText(modalCtrl,'feedback')">{{Lang["feedback"]}}</ion-item>
+      <ion-item (click)="showGeneralText(modalCtrl,'help')">{{Lang["help"]}}</ion-item>
+      <ion-item (click)="showGeneralText(modalCtrl,'joinus')">{{Lang["joinus"]}}</ion-item>
+      <ion-item>{{Lang["versionchecking"]}}</ion-item>
+    </ion-list>
+  </div>
+  <div class="content-block">
+    <button ion-button color="danger" clear block (click)="gotoLogout()">{{Lang["logout"]}}</button>
+  </div>
+</ion-content>

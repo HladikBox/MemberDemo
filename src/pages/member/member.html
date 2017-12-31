@@ -1,34 +1,43 @@
 ﻿<ion-content>
-    <ion-grid class="info">
-        <ion-row>
-            <ion-col text-right>
-                <ion-icon  name="" class="toprighticon" style="color:black;"></ion-icon>
-                <ion-icon  *ngIf="Member.isLogined()" name="settings" class="toprighticon"></ion-icon>
-                <ion-icon  *ngIf="Member.isLogined()" name="mail" class="toprighticon"></ion-icon>
-            </ion-col>
-        </ion-row>
-        <ion-row *ngIf="Member.isLogined()==false" (click)="gotoLogin()">
-            <ion-col col-3>
-                <img class="photo" src="assets/imgs/bg-member-default.jpg" />
-            </ion-col>
-            <ion-col  col-8>
-                <p class="title">{{Lang["clicktologin"]}}</p>
-                <p class="logintips">{{Lang["clicktologin_tips"]}}</p>
-            </ion-col>
-        </ion-row>
-      <ion-row *ngIf="Member.isLogined()" (click)="gotoMemberInfo()">
-        <ion-col col-3>
-          <img class="photo" src="{{Member.getPhoto()}}" />
-        </ion-col>
-        <ion-col col-8>
-          <p class="title">{{Member.getName()}}
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname" *ngIf="info.rank.name!=''">{{info.rank.name}}</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname" *ngIf="info.super_expired_days>0">{{info.super_expired_days>0?Lang["supermember"]:""}}</span></p>
-          <p class="logintips">{{Lang["account"]}}：{{info.account}}&nbsp;&nbsp;&nbsp;&nbsp;{{info.super_expired_days>0?Lang["superexpiredreminderdays"]+"："+info.super_expired_days:""}}</p>
-        </ion-col>
-      </ion-row>
-        <ion-row>
-            <ion-col></ion-col>
-        </ion-row>
-    </ion-grid>
+  <ion-grid class="info">
+    <ion-row>
+      <ion-col text-right>
+        <ion-icon name="" class="toprighticon" style="color:black;"></ion-icon>
+        <ion-icon *ngIf="Member.isLogined()" name="settings" class="toprighticon" (click)="gotoMemberSetting()"></ion-icon>
+        <ion-icon *ngIf="Member.isLogined()" name="mail" class="toprighticon"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="Member.isLogined()==false" (click)="gotoLogin()">
+      <ion-col col-3>
+        <img class="photo" src="assets/imgs/bg-member-default.jpg" />
+      </ion-col>
+      <ion-col col-8>
+        <p class="title">{{Lang["clicktologin"]}}</p>
+        <p class="logintips">{{Lang["clicktologin_tips"]}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="Member.isLogined()" (click)="gotoMemberInfo()">
+      <ion-col col-3>
+        <img class="photo" src="{{Member.getPhoto()}}" />
+      </ion-col>
+      <ion-col col-8>
+        <p class="title">
+          {{Member.getName()}}
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname" *ngIf="Member.info.rank.name!=''">{{Member.info.rank.name}}</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="rankname" *ngIf="Member.info.super_expired_days>0">{{Member.info.super_expired_days>0?Lang["supermember"]:""}}</span>
+        </p>
+        <p class="logintips">{{Lang["dollarname"]}}：{{Member.info.account}}&nbsp;&nbsp;&nbsp;&nbsp;{{Member.info.super_expired_days>0?Lang["superexpiredreminderdays"]+"："+Member.info.super_expired_days:""}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="content-block">
+    <ion-list>
+      <button ion-item (click)="gotoWallat()">
+        {{Lang["dollarname"]}}{{Lang["wallet"]}}
+      </button>
+    </ion-list>
+  </div>
 </ion-content>

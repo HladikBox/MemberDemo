@@ -1,5 +1,5 @@
 ﻿<!--
-  Generated template for the MemberInfoPage page.
+  Generated template for the Member.infoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -24,16 +24,16 @@
       <ion-item>
         <ion-label>{{Lang["headphoto"]}}</ion-label>
         <ion-avatar item-end  (click)="selectPhoto()">
-          <img src="{{getPhoto()}}">
+          <img src="{{Member.getPhoto()}}">
         </ion-avatar>
       </ion-item>
       <ion-item  (click)="nameInput()">
         <ion-label>{{Lang["nickname"]}}</ion-label>
-        <p  item-end>{{memberinfo.name}}</p>
+        <p  item-end>{{Member.name}}</p>
       </ion-item>
       <ion-item>
         <ion-label>{{Lang["sexual"]}}</ion-label>
-        <ion-select [(ngModel)]="memberinfo.sexual"  (ionChange)="sexualChange(e)" okText="{{Lang['ok']}}" cancelText="{{Lang['cancel']}}">
+        <ion-select [(ngModel)]="Member.info.sexual"  (ionChange)="sexualChange(e)" okText="{{Lang['ok']}}" cancelText="{{Lang['cancel']}}">
           <ion-option value="">{{Lang["unsetting"]}}</ion-option>
           <ion-option value="F">{{Lang["female"]}}</ion-option>
           <ion-option value="M">{{Lang["male"]}}</ion-option>
@@ -41,11 +41,11 @@
       </ion-item>
       <ion-item>
         <ion-label>{{Lang["birth"]}}</ion-label>
-        <ion-datetime  item-end displayFormat="YYYY-MM-DD" [(ngModel)]="memberinfo.birth" (ionChange)="birthChange(e)"></ion-datetime>
+        <ion-datetime  item-end displayFormat="YYYY-MM-DD" [(ngModel)]="Member.info.birth" (ionChange)="birthChange(e)"></ion-datetime>
       </ion-item>
       <ion-item (click)="signatureInput()">
         <ion-label  >{{Lang["signature"]}}</ion-label>
-        <p item-end >{{memberinfo.signature}}</p>
+        <p item-end >{{Member.info.signature}}</p>
       </ion-item>
     </ion-list>
   </div>

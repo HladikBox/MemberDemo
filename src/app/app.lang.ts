@@ -62,6 +62,38 @@ export class AppLang {
         AppLang.Lang["takephoto"] = "拍照";
         AppLang.Lang["takefromalbum"] = "手机相册";
         AppLang.Lang["takerandom"] = "随机推荐"; 
+        AppLang.Lang["setting"] = "设置";
+        AppLang.Lang["accountsecurity"] = "账号安全";
+        AppLang.Lang["rebindmobile"] = "更换手机";
+        AppLang.Lang["resetpassword"] = "重置密码";
+        AppLang.Lang["privatesetting"] = "隐私设置";
+        AppLang.Lang["identityverify"] = "实名认证";
+        AppLang.Lang["advanced"] = "高级";
+        AppLang.Lang["notifysetting"] = "消息设置";
+        AppLang.Lang["pushsetting"] = "推送设置";
+        AppLang.Lang["clearstorage"] = "清空存储空间";
+        AppLang.Lang["clearsearch"] = "清空搜索记录";
+        AppLang.Lang["othersetting"] = "其它设置";
+        AppLang.Lang["aboutus"] = "关于我们";
+        AppLang.Lang["feedback"] = "意见反馈";
+        AppLang.Lang["help"] = "帮助";
+        AppLang.Lang["joinus"] = "加入我们"; 
+        AppLang.Lang["versionchecking"] = "检查更新";
+        AppLang.Lang["submit"] = "提交"; 
+        AppLang.Lang["oldmobile"] = "原手机号码"; 
+        AppLang.Lang["newmobile"] = "新手机号码"; 
+        AppLang.Lang["operationsuccessful"] = "操作成功"; 
+        AppLang.Lang["othererror"] = "操作发生错误，请重试";
+        AppLang.Lang["oldverifyincorrect"] = "原手机号码验证码不正确"; 
+        AppLang.Lang["newverifyincorrect"] = "新手机号码验证码不正确"; 
+        AppLang.Lang["mobileisthesame"] = "新绑定的手机号码不能是原来的号码"; 
+        AppLang.Lang["passwordcannotnull"] = "密码不能为空";
+        AppLang.Lang["inputnewpassword"] = "输入新密码";
+        AppLang.Lang["newpassword"] = "新密码"; 
+        AppLang.Lang["newpassword"] = "新密码";
+        AppLang.Lang["introduce"] = "介绍";
+        AppLang.Lang["wallet"] = "钱包";
+        AppLang.Lang["dollarname"] = "神奇币";
     }
     
 }

@@ -11,7 +11,6 @@ import { MemberApi } from "../../providers/member.api";
 })
 export class MemberPage extends AppBase
 {
-    info = { account: 0, super_expired_days: 0, rank: {name:""}};
     constructor(public navCtrl: NavController, public modalCtrl: ModalController, public memberApi: MemberApi)
     {
         super();
@@ -33,13 +32,17 @@ export class MemberPage extends AppBase
                     this.Member.name = data.name;
                     this.Member.photo = data.photo;
                     this.Member.store();
-                    this.info = data;
+                    this.Member.info = data;
                 });
         }
     }
     gotoMemberInfo() {
         //this.Member.logout();
         var modal = this.modalCtrl.create("MemberInfoPage");
+        modal.present();
+    }
+    gotoMemberSetting() {
+        var modal = this.modalCtrl.create("MemberSettingPage");
         modal.present();
     }
 }

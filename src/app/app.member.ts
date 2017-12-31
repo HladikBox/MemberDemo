@@ -15,6 +15,8 @@ export class AppMember {
     public token: string = "";
     public oauthtype: string = "";
     public oauthunionid: string = "";
+    public info = { sexual: "", birth: null, signature: "",
+        account: 0, super_expired_days: 0, rank: { name: "" }};
 
     public static GetInstance() {
         if (AppMember.instance == null) {
@@ -28,16 +30,6 @@ export class AppMember {
             return "assets/imgs/bg-member-default.jpg";;
         }
         return this.photo.indexOf("http") == 0 ? this.photo : ApiConfig.getUploadPath() + "member/" + this.photo;
-    }
-
-    public static getPhotoByPath(photo)
-    {
-        if (photo == null || photo.trim() == "")
-        {
-            return "assets/imgs/bg-member-default.jpg";;
-        }
-        return photo.indexOf("http") == 0 ? photo : ApiConfig.getUploadPath() + "member/" + photo;
-
     }
     public getName()
     {

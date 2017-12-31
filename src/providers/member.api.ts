@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { Loading} from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RequestOptions } from '@angular/http';
@@ -835,7 +835,74 @@ public weixinrecharge(data, showLoadingModal:boolean=true) {
         
     }
 
+//获取手机号码
+public getmobile(data, showLoadingModal: boolean = true) {
+    var url = ApiConfig.getApiUrl() + 'member/getmobile';
+    var headers = ApiConfig.GetHeader(url, data);
+    let options = new RequestOptions({ headers: headers });
 
+    let body = ApiConfig.ParamUrlencoded(data);
+
+    let loading: Loading = null;
+    if (showLoadingModal) {
+        loading = ApiConfig.GetLoadingModal();
+    }
+
+    return this.http.post(url, body, options).toPromise()
+        .then((res) => {
+            if (ApiConfig.DataLoadedHandle('member/getmobile', data, res)) {
+                if (showLoadingModal) {
+                    ApiConfig.DimissLoadingModal();
+                }
+
+                return res.json();
+            } else {
+                return Promise.reject(res);
+            }
+        })
+        .catch(err => {
+
+            if (showLoadingModal) {
+                ApiConfig.DimissLoadingModal();
+            }
+            return ApiConfig.ErrorHandle('member/getmobile', data, err);
+        });
+
+
+}
+
+public changemobile(data, showLoadingModal: boolean = true) {
+    var url = ApiConfig.getApiUrl() + 'member/changemobile';
+    var headers = ApiConfig.GetHeader(url, data);
+    let options = new RequestOptions({ headers: headers });
+
+    let body = ApiConfig.ParamUrlencoded(data);
+
+    let loading: Loading = null;
+    if (showLoadingModal) {
+        loading = ApiConfig.GetLoadingModal();
+    }
+
+    return this.http.post(url, body, options).toPromise()
+        .then((res) => {
+            if (ApiConfig.DataLoadedHandle('member/changemobile', data, res)) {
+                if (showLoadingModal) {
+                    ApiConfig.DimissLoadingModal();
+                }
+
+                return res.json();
+            } else {
+                return Promise.reject(res);
+            }
+        })
+        .catch(err => {
+
+            if (showLoadingModal) {
+                ApiConfig.DimissLoadingModal();
+            }
+            return ApiConfig.ErrorHandle('member/changemobile', data, err);
+        });
+}
     
 
 }
