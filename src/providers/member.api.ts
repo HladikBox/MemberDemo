@@ -833,7 +833,42 @@ public weixinrecharge(data, showLoadingModal:boolean=true) {
             });
 
         
+}
+//虚拟货币充值，仅测试支付接口回调才有效充值
+    public testpayrecharge(data, showLoadingModal: boolean = true) {
+        var url = ApiConfig.getApiUrl() + 'member/testpayrecharge';
+    var headers = ApiConfig.GetHeader(url, data);
+    let options = new RequestOptions({ headers: headers });
+
+    let body = ApiConfig.ParamUrlencoded(data);
+
+    let loading: Loading = null;
+    if (showLoadingModal) {
+        loading = ApiConfig.GetLoadingModal();
     }
+
+    return this.http.post(url, body, options).toPromise()
+        .then((res) => {
+            if (ApiConfig.DataLoadedHandle('member/weixinrecharge', data, res)) {
+                if (showLoadingModal) {
+                    ApiConfig.DimissLoadingModal();
+                }
+
+                return res.json();
+            } else {
+                return Promise.reject(res);
+            }
+        })
+        .catch(err => {
+
+            if (showLoadingModal) {
+                ApiConfig.DimissLoadingModal();
+            }
+            return ApiConfig.ErrorHandle('member/weixinrecharge', data, err);
+        });
+
+
+}
 
 //获取手机号码
 public getmobile(data, showLoadingModal: boolean = true) {

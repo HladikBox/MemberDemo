@@ -92,8 +92,24 @@ export class AppLang {
         AppLang.Lang["newpassword"] = "新密码"; 
         AppLang.Lang["newpassword"] = "新密码";
         AppLang.Lang["introduce"] = "介绍";
-        AppLang.Lang["wallet"] = "钱包";
-        AppLang.Lang["dollarname"] = "神奇币";
+        AppLang.Lang["wallet"] = "钱包"; 
+        AppLang.Lang["dollarname"] = "神奇币"; 
+        AppLang.Lang["transationrecord"] = "交易记录"; 
+        AppLang.Lang["gorecharge"] = "立即充值"; 
+        AppLang.Lang["recharge"] = "充值"; 
+        AppLang.Lang["rechargeamount"] = "充值数量"; 
+        AppLang.Lang["custom"] = "自定义";
+        AppLang.Lang["needtopay"] = "需支付";
+        AppLang.Lang["customtips"] = "自定义充值";
+        AppLang.Lang["pleasetypedollaramount"] = "请输入充值数量"; 
+        AppLang.Lang["dollar"] = "元"; 
+        AppLang.Lang["rechargetype"] = "充值方式";
+        AppLang.Lang["confirmpayment"] = "确认支付"; 
+        AppLang.Lang["paymentagreement"] = "用户购买协议"; 
+        AppLang.Lang["paymenysuccesstips"] = "支付成功"; 
+        AppLang.Lang["selectbuyamount"] = "请选择购买数量";
+        AppLang.Lang["consumerecord"] = "消费记录";
+        AppLang.Lang["rechargerecord"] = "充值记录";
     }
     
 }

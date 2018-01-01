@@ -26,23 +26,29 @@ export class MemberPage extends AppBase
     {
         if (this.Member.isLogined())
         {
-            this.memberApi.info({}, false).then(
-                (data) =>
-                {
-                    this.Member.name = data.name;
-                    this.Member.photo = data.photo;
-                    this.Member.store();
-                    this.Member.info = data;
-                });
+            this.Member.updateInfo();
         }
     }
     gotoMemberInfo() {
+        if (this.checkLogin(this.modalCtrl) == false) {
+            return;
+        }
         //this.Member.logout();
         var modal = this.modalCtrl.create("MemberInfoPage");
         modal.present();
     }
     gotoMemberSetting() {
+        if (this.checkLogin(this.modalCtrl) == false) {
+            return;
+        }
         var modal = this.modalCtrl.create("MemberSettingPage");
         modal.present();
     }
+    gotoWallet() {
+        if (this.checkLogin(this.modalCtrl) == false) {
+            return;
+        }
+        var modal = this.modalCtrl.create("MemberWalletPage");
+        modal.present();
+    } 
 }

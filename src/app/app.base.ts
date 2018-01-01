@@ -92,5 +92,12 @@ export class AppBase {
                 // error
             })
     }
-
+    checkLogin(modalCtrl: ModalController) {
+        if (this.Member.isLogined()==false) {
+            var modal = modalCtrl.create("LoginPage");
+            modal.present();
+            return false;
+        }
+        return true;
+    }
 }

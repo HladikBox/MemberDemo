@@ -25,8 +25,16 @@ export class MemberWalletPage extends AppBase {
         this.viewCtrl.dismiss();
     }
 
-    ionViewDidLoad() {
+    ionViewDidEnter() {
+        this.Member.updateInfo();
         console.log('ionViewDidLoad MemberWalletPage');
     }
-
+    gotoRecharge() {
+        var modal = this.modalCtrl.create("MemberRechargePage");
+        modal.present();
+    }
+    gotoTransationRecord() {
+        var modal = this.modalCtrl.create("MemberTransationPage");
+        modal.present();
+    }
 }

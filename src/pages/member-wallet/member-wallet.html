@@ -18,7 +18,21 @@
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <div class="content-block">
+    <ion-list>
+      <ion-item style="border:0px;">
+        <h3 class="light">{{Lang["dollarname"]}}{{Lang["account"]}}</h3>
+      </ion-item>
+      <ion-item>
+        <h1 class="primary2">{{Member.info.account}}</h1>
+        <p item-end (click)="gotoTransationRecord()">{{Lang["transationrecord"]}} <ion-icon name="arrow-forward"></ion-icon></p>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div  class="content-block">
+    <div padding>
+      <button ion-button color="primary" block (click)="gotoRecharge()" >{{Lang["gorecharge"]}}</button>
+    </div>
+  </div>
 </ion-content>

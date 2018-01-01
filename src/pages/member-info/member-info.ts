@@ -36,15 +36,7 @@ export class MemberInfoPage extends AppBase
     }
     ionViewDidLoad()
     {
-        this.memberApi.info({}).then(data =>
-        {
-            console.log(data);
-            if (data.sexual == null) {
-                data.sexual = "";
-            }
-            this.Member.info = data;
-            
-        });
+        this.Member.updateInfo();
         console.log('ionViewDidLoad MemberInfoPage');
     }
     gotoLogout() {

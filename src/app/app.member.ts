@@ -2,13 +2,16 @@
 import {AppUtil} from './app.util';
 import { ApiConfig } from './api.config';
 import { AppLang } from './app.lang';
+import { MemberApi } from "../providers/member.api";
 
 export class AppMember {
+
     private constructor() {
 
     }
 
     private static instance: AppMember;
+    public static memberApi: MemberApi = null;
     public id:string = "";
     public name: string = "";
     public photo: string = "";
@@ -99,5 +102,18 @@ export class AppMember {
     public static GetLatestLoginMobile()
     {
         return AppUtil.Storage.get("latestloginmobile");
+    }
+    public updateInfo() {
+        if (AppMember.memberApi != null) {
+            AppMember.memberApi.info({}, false).then(data => {
+
+                this.name = data.name;
+                this.photo = data.photo;
+                this.store();
+                this.info = data;
+            });
+        } else {
+            console.error("update info error, please check app.member.UpdateInfo");
+        }
     }
 }

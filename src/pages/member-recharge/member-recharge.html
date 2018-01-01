@@ -1,0 +1,89 @@
+﻿<!--
+  Generated template for the MemberRechargePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Lang["dollarname"]}}{{Lang["recharge"]}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-block">
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{Member.getPhoto()}}">
+        </ion-avatar>
+        <ion-label>{{Member.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="content-block">
+    <ion-list>
+      <ion-item>
+        <p>{{Lang["rechargeamount"]}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <button ion-button  outline block (click)="countAmount(10)" small>10 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block (click)="countAmount(20)" small>20 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block (click)="countAmount(50)" small>50 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block (click)="countAmount(100)" small>100 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block (click)="countAmount(200)" small>200 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block (click)="countAmount(500)" small>500 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block (click)="countAmount(1000)" small>1000 {{Lang["dollarname"]}}</button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button outline block small color="primary2" (click)="showCustomAmount()">{{Lang["custom"]}}</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{Lang["needtopay"]}}<span class="primary2" style="font-size:200%"> {{amount.toFixed(2)}} </span>{{Lang["dollar"]}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="content-block">
+    <ion-list radio-group [(ngModel)]="rechargetype">
+      <ion-item>
+        <p>{{Lang["rechargetype"]}}</p>
+      </ion-item>
+      <ion-item *ngFor="let item of rechargetypelist">
+        <img style="width: 10vw; height: 10vw;" src="{{item.logo}}" item-start />
+        <ion-label>{{item.name}}</ion-label>
+        <ion-radio value="{{item.type}}" ></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div padding>
+    <button ion-button color="primary" block (click)="payment()">{{Lang["confirmpayment"]}}</button>
+  </div>
+  <div padding>
+    <span (click)="showGeneralText(modalCtrl,'paymentagreement')" class="primary2">{{Lang["paymentagreement"]}}</span>
+  </div>
+</ion-content>
