@@ -938,6 +938,47 @@ public changemobile(data, showLoadingModal: boolean = true) {
             return ApiConfig.ErrorHandle('member/changemobile', data, err);
         });
 }
-    
+
+
+    public payfortime(data, showLoadingModal: boolean = true)
+{
+        var url = ApiConfig.getApiUrl() + 'member/payfortime';
+    var headers = ApiConfig.GetHeader(url, data);
+    let options = new RequestOptions({ headers: headers });
+
+    let body = ApiConfig.ParamUrlencoded(data);
+
+    let loading: Loading = null;
+    if (showLoadingModal)
+    {
+        loading = ApiConfig.GetLoadingModal();
+    }
+
+    return this.http.post(url, body, options).toPromise()
+        .then((res) =>
+        {
+            if (ApiConfig.DataLoadedHandle('member/payfortime', data, res))
+            {
+                if (showLoadingModal)
+                {
+                    ApiConfig.DimissLoadingModal();
+                }
+
+                return res.json();
+            } else
+            {
+                return Promise.reject(res);
+            }
+        })
+        .catch(err =>
+        {
+
+            if (showLoadingModal)
+            {
+                ApiConfig.DimissLoadingModal();
+            }
+            return ApiConfig.ErrorHandle('member/payfortime', data, err);
+        });
+}  
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, ToastController, ModalController, ActionSheetController, AlertController } from 'ionic-angular';
 import { AppBase } from "../../app/app.base";
 import { AppMember } from "../../app/app.member";
@@ -40,5 +40,14 @@ export class MemberSuperPage extends AppBase {
     }
     var modal = this.modalCtrl.create("MemberSuperRenewPage");
     modal.present();
+  }
+  gotoRenewRecord()
+  {
+      if (this.checkLogin(this.modalCtrl) == false)
+      {
+          return;
+      }
+      var modal = this.modalCtrl.create("MemberSuperRenewRecordPage");
+      modal.present();
   }
 }
