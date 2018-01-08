@@ -37,7 +37,9 @@ export class MemberRechargePage extends AppBase {
     dismiss() {
         this.viewCtrl.dismiss();
     }
-
+    dismissSuccess(){
+        this.viewCtrl.dismiss({paied:true});
+    }
     ionViewDidLoad() {
         console.log('ionViewDidLoad MemberRechargePage');
     }
@@ -102,7 +104,8 @@ export class MemberRechargePage extends AppBase {
                     }).then((data) => {
                         if (data.code == 0) {
                             this.toast(this.toastCtrl, this.Lang["paymenysuccesstips"]);
-                            this.dismiss();
+                            this.Member.updateInfo();
+                            this.dismissSuccess();
                         } else {
                             this.toast(this.toastCtrl, "it cannot use in release version");
                         }

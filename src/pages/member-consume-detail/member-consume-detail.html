@@ -1,0 +1,47 @@
+<!--
+  Generated template for the MemberConsumeDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Lang["consumedetail"]}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div  class="content-block">
+    <ion-list>
+      <ion-item>
+        <ion-label >{{Lang["consumetitle"]}}</ion-label>
+        <p item-end>{{info.title}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label >{{Lang["consumechannel"]}}</ion-label>
+        <p item-end>{{info.type_name}}</p>
+      </ion-item>
+      <ion-item>
+          <ion-label >{{Lang["consumedate"]}}</ion-label>
+          <p item-end>{{info.consumetime}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div  class="content-block">
+    <ion-list>
+      <ion-item>
+          <ion-label >{{Lang["consumeamount"]}}</ion-label>
+        <p >{{info.amount}}{{Lang["dollarname"]}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

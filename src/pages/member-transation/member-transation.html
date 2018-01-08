@@ -25,13 +25,20 @@
 
 <ion-content>
   <div class="content-block" *ngIf="displaytype=='consumerecord'">
+    <ion-list>
+      <ion-item   *ngFor="let rec of consumelist" (click)="gotoConsumeDetail(rec)">
+        <h3>{{rec.title}}</h3>
+        <p>{{rec.consumetime}}</p>
+        <h3 item-end class="primary2">{{rec.amount}}{{Lang["dollarname"]}}</h3>
+      </ion-item>
+    </ion-list>
   </div>
   <div class="content-block" *ngIf="displaytype=='rechargerecord'">
     <ion-list>
-      <ion-item   *ngFor="let rec of rechargelist">
+      <ion-item   *ngFor="let rec of rechargelist" (click)="gotoRechargeDetail(rec)">
         <h3>{{rec.subject}}</h3>
         <p>{{rec.rechargetime}}</p>
-        <h3 item-end class="primary2">{{rec.dollar}}</h3>
+        <h3 item-end class="primary2">{{rec.dollar}}{{Lang["dollarname"]}}</h3>
       </ion-item>
     </ion-list>
   </div>

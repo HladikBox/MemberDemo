@@ -18,7 +18,8 @@ import { AppMember } from "../../app/app.member";
 export class ZCopyPage extends AppBase {
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
-        public viewCtrl: ViewController, public modalCtrl: ModalController, public toastCtrl: ToastController, public alertCtrl: AlertController) {
+        public viewCtrl: ViewController, public modalCtrl: ModalController, 
+        public toastCtrl: ToastController, public alertCtrl: AlertController) {
         super();
     }
     dismiss() {

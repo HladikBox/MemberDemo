@@ -51,4 +51,11 @@ export class MemberPage extends AppBase
         var modal = this.modalCtrl.create("MemberWalletPage");
         modal.present();
     } 
+    gotoMemberSuper() {
+        if (this.checkLogin(this.modalCtrl) == false) {
+            return;
+        }
+        var modal = this.modalCtrl.create("MemberSuperPage");
+        modal.present();
+    } 
 }

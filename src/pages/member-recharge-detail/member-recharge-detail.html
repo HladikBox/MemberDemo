@@ -1,0 +1,56 @@
+<!--
+  Generated template for the MemberRechargeDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{Lang["rechargedetail"]}}</ion-title>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content >
+    <div  class="content-block">
+      <ion-list>
+          <ion-item>
+            <ion-label >{{Lang["rechargeorderno"]}}</ion-label>
+            <p item-end>{{info.orderno}}</p>
+          </ion-item>
+        <ion-item>
+          <ion-label >{{Lang["rechargetitle"]}}</ion-label>
+          <p item-end>{{info.subject}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label >{{Lang["rechargechannel"]}}</ion-label>
+          <p item-end>{{info.pay_type_name}}</p>
+        </ion-item>
+        <ion-item>
+            <ion-label >{{Lang["rechargedate"]}}</ion-label>
+            <p item-end>{{info.rechargetime}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  
+    <div  class="content-block">
+      <ion-list>
+        <ion-item>
+            <ion-label >{{Lang["rechargeprice"]}}</ion-label>
+          <p  item-end>{{info.amount}}{{Lang["dollar"]}}</p>
+        </ion-item>
+        <ion-item>
+            <ion-label >{{Lang["rechargeamount"]}}</ion-label>
+          <p  item-end>{{info.dollar}}{{Lang["dollarname"]}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+  
