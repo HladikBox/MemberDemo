@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class MemberrechargeApi {
+export class MemberconsumeApi {
 
     constructor(public http: Http) {
 
@@ -24,7 +24,7 @@ export class MemberrechargeApi {
 
 //
 public list(data, showLoadingModal:boolean=true) {
-        var url = ApiConfig.getApiUrl()+'memberrecharge/list';
+        var url = ApiConfig.getApiUrl()+'memberconsume/list';
         var headers = ApiConfig.GetHeader(url, data);
         let options = new RequestOptions({ headers: headers });
 
@@ -37,7 +37,7 @@ public list(data, showLoadingModal:boolean=true) {
 
         return this.http.post(url, body, options).toPromise()
             .then((res) => {
-              if(ApiConfig.DataLoadedHandle('memberrecharge/list',data,res)){
+              if(ApiConfig.DataLoadedHandle('memberconsume/list',data,res)){
                   if(showLoadingModal){
       					     ApiConfig.DimissLoadingModal();
                   }
@@ -52,7 +52,7 @@ public list(data, showLoadingModal:boolean=true) {
                 if(showLoadingModal){
 					         ApiConfig.DimissLoadingModal();
                 }
-                return ApiConfig.ErrorHandle('memberrecharge/list',data,err);
+                return ApiConfig.ErrorHandle('memberconsume/list',data,err);
             });
 
         
@@ -61,7 +61,7 @@ public list(data, showLoadingModal:boolean=true) {
 
 //
 public detail(data, showLoadingModal:boolean=true) {
-        var url = ApiConfig.getApiUrl()+'memberrecharge/detail';
+        var url = ApiConfig.getApiUrl()+'memberconsume/detail';
         var headers = ApiConfig.GetHeader(url, data);
         let options = new RequestOptions({ headers: headers });
 
@@ -74,7 +74,7 @@ public detail(data, showLoadingModal:boolean=true) {
 
         return this.http.post(url, body, options).toPromise()
             .then((res) => {
-              if(ApiConfig.DataLoadedHandle('memberrecharge/detail',data,res)){
+              if(ApiConfig.DataLoadedHandle('memberconsume/detail',data,res)){
                   if(showLoadingModal){
       					     ApiConfig.DimissLoadingModal();
                   }
@@ -89,7 +89,7 @@ public detail(data, showLoadingModal:boolean=true) {
                 if(showLoadingModal){
 					         ApiConfig.DimissLoadingModal();
                 }
-                return ApiConfig.ErrorHandle('memberrecharge/detail',data,err);
+                return ApiConfig.ErrorHandle('memberconsume/detail',data,err);
             });
 
         

@@ -110,6 +110,27 @@ export class AppLang {
         AppLang.Lang["selectbuyamount"] = "请选择购买数量";
         AppLang.Lang["consumerecord"] = "消费记录";
         AppLang.Lang["rechargerecord"] = "充值记录";
+        AppLang.Lang["consumedetail"] = "消费详情";
+        AppLang.Lang["consumetitle"] = "消费主题";
+        AppLang.Lang["consumechannel"] = "消费渠道";
+        AppLang.Lang["consumedate"] = "消费时间";
+        AppLang.Lang["consumeamount"] = "消费数量";
+        AppLang.Lang["rechargedetail"] = "充值详情";
+        AppLang.Lang["rechargeorderno"] = "充值单号";
+        AppLang.Lang["rechargetitle"] = "充值主题";
+        AppLang.Lang["rechargechannel"] = "充值渠道";
+        AppLang.Lang["rechargedate"] = "充值时间";
+        AppLang.Lang["rechargeprice"] = "支付金额";
+        AppLang.Lang["rechargeamount"] = "充值数量";
+        AppLang.Lang["tobe"] = "成为";
+        AppLang.Lang["youarenot"] = "你还不是";
+        AppLang.Lang["renew"] = "续订";
+        AppLang.Lang["expireddate"] = "到期日期";
+        AppLang.Lang["renewrecord"] = "开通记录";
+        AppLang.Lang["supermember"] = "超级会员";
+        AppLang.Lang["balance"] = "剩余";
+        AppLang.Lang["supermemberagreement"] = "大会员用户协议";
+        AppLang.Lang["youneedtopay"] = "你还需要支付";
     }
     
 }

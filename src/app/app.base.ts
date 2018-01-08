@@ -100,4 +100,34 @@ export class AppBase {
         }
         return true;
     }
+
+    showRequirePayment(alertCtrl:AlertController,modalCtrl:ModalController,dollar,callback) {
+        let prompt = alertCtrl.create({
+            message: this.Lang["youneedtopay"]+dollar.toString()+this.Lang["dollarname"],
+            buttons: [
+                {
+                    text: this.Lang["cancel"],
+                    handler: data => {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: this.Lang["ok"],
+                    handler: data => {
+                        var modal=modalCtrl.create("MemberRechargePage",{dollar:dollar});
+                        modal.onDidDismiss(data=>{
+                            if(data!=undefined){
+                                if(data.paied){
+                                    callback(data);
+                                }
+                            }
+                        });
+                        modal.present();
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    }
+
 }
